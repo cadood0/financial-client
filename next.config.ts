@@ -4,6 +4,8 @@ const apiProxyTarget =
   process.env.API_PROXY_TARGET ?? "http://localhost:8080";
 
 const nextConfig: NextConfig = {
+  // Smaller Docker images; required by the production Dockerfile.
+  output: "standalone",
   async rewrites() {
     return [
       {
